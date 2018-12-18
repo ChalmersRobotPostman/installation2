@@ -9,10 +9,11 @@
 * Install and setup RosAria:
 
 download the rosariainstallation file and run it from this aria webarchive:
+
 		https://web.archive.org/web/20180205212122/http://robots.mobilerobots.com/wiki/Aria
 
-* I
 * How to run the robot with rviz: (this launch file will initiate with rotating two times) 
+
          roscore
 	
          roslaunch p3dx_launch p3dx.launch
@@ -28,9 +29,11 @@ Follow the steps under mapping, however we have made changes to the p3dx_launch 
 
 
 * How to run apriltags-detection (this can be done simultaneously with running p3dx_launch
+
          rosrun apriltags2_ros ATtags_tt.py
 
 * How to run the postman interface:
+
          roslaunch rosbridge_server rosbridge_websocket.launch
 
 then, go into catkin_ws/src/POSTMAN_interface and start index.html. This will open the interface in a browser window.
@@ -39,8 +42,10 @@ this interface publishes string messages to the topic /goals, which the script i
 
 
 * Install teamviewer, open terminal and run it by:
+
          teamviewer
 then startup teamviewer on the tablet and connect.
+
 
 * Configure navigation stack:
 
