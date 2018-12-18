@@ -34,8 +34,8 @@ catkin_make
 source devel/setup.bash
 rosdep install p3dx_launch
 cd src
-
-sudo apt-get install ros-<rosdistro>-rosbridge-server
+sudo apt-get install ros-kinetic-image-view
+sudo apt-get install ros-kinetic-rosbridge-server
 sudo apt-get install ros-kinetic-image-geometry
 git clone https://github.com/amor-ros-pkg/rosaria.git
 git clone https://github.com/ChalmersRobotPostman/apriltags2_ros.git

@@ -1,4 +1,6 @@
-* Download this [script](https://github.com/ChalmersRobotPostman/Installation.sh) , which downloads ROS, creates a new catkin workspace and clones down all the repositories you need. If you don't need to do all this, just comment out the lines you don't want to run.
+* This project was made on Ubuntu 16.04.01, following is a tutorial how to setup this up. This tutorial is brief, therefore you might have to you use google for certain parts.
+
+* Download this [script](https://github.com/ChalmersRobotPostman/Installation.sh) , which downloads ROS, creates a new catkin workspace and clones down all the repositories you need. If you don't need to do all this, just comment out the lines you don't want to run. 
 
     * Put the file where you want to create the new workspace and **source** it (just running it won't work)
      
@@ -6,13 +8,17 @@
 
           source ./installation.sh
 
+* In this project, we followed this tutorial https://github.com/fgrzeszc/p3dx_launch, however a lot of adjustments had to be made to make it work along with our own packages.
+
 * Install and setup RosAria:
 
 download the rosaria installation file from this aria webarchive and install install it with e.g. the ubuntu software center:
 
 		https://web.archive.org/web/20180205212122/http://robots.mobilerobots.com/wiki/Aria
 
-* How to run the robot with rviz: (this launch file will initiate with rotating two times) 
+* How to run the robot with rviz: (this launch file will initiate with rotating two times to try to localize itself) 
+
+First, connect the lidar sensor, web-camera and the serial cable to the onboard computer, then run:
 
          roscore
 	
@@ -20,7 +26,7 @@ download the rosaria installation file from this aria webarchive and install ins
 	
          rosrun rviz rviz
 
-open the config through file -> open then go to catkin_ws/src/p3dx_launch/nav.rviz
+open the navigation config through file -> open then go to catkin_ws/src/p3dx_launch/nav.rviz (this can then next time be opened through file -> recent configs
 
 * If you want to run the robot with keyboard, you can use rosaria_client: https://github.com/pengtang/rosaria_client
 
@@ -58,5 +64,5 @@ then startup teamviewer on the tablet and connect.
 
 * Configure navigation stack:
 
-To tune the navigation stack, there are for .yaml files located in catkin_ws/src/p3dx_launch/nav_config where you can adjust parameters. Another way is to run rqt_reconfigure to adjust more parameters dynamically.
+To tune the navigation stack, there are four .yaml files located in catkin_ws/src/p3dx_launch/nav_config where you set certain parameters. Another way is to run rqt_reconfigure to adjust more parameters dynamically.
 
