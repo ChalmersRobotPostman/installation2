@@ -34,6 +34,8 @@ catkin_make
 source devel/setup.bash
 rosdep install p3dx_launch
 cd src
+
+sudo apt-get install ros-<rosdistro>-rosbridge-server
 sudo apt-get install ros-kinetic-image-geometry
 git clone https://github.com/amor-ros-pkg/rosaria.git
 git clone https://github.com/ChalmersRobotPostman/apriltags2_ros.git
@@ -48,3 +50,6 @@ catkin_make -j4
 # -- add setup.bash to bashrc --
 echo "source $DIR/catkin_ws/devel/setup.bash" >> ~/.bashrc
 source ~/.bashrc
+
+sudo chmod a+rw /dev/ttyUSB0
+sudo chmod a+rw /dev/ttyACM0
