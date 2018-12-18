@@ -12,9 +12,22 @@
 
 * Install and setup RosAria:
 
+First, download rosaria into catkin_ws/src:
+
+        git clone https://github.com/amor-ros-pkg/rosaria.git
+
 download the rosaria installation file from this aria webarchive and install install it with e.g. the ubuntu software center:
 
-		https://web.archive.org/web/20180205212122/http://robots.mobilerobots.com/wiki/Aria
+        https://web.archive.org/web/20180205212122/http://robots.mobilerobots.com/wiki/Aria
+
+
+* The first time you connect the robot and the lidar to usb-ports, you might have to run
+         
+         sudo chmod a+rw /dev/ttyUSB0
+
+         sudo chmod a+rw /dev/ttyACM0
+
+to give permission for the user to use these.
 
 * How to run the robot with rviz: (this launch file will initiate with rotating two times to try to localize itself) 
 
@@ -32,7 +45,6 @@ open the navigation config through file -> open then go to catkin_ws/src/p3dx_la
 
 * A tutorial on how to record a map: https://github.com/fgrzeszc/p3dx_launch
 Follow the steps under mapping, however we have made changes to the p3dx_launch file to work for our project.
-
 
 * How to run apriltags-detection: (this can be done simultaneously with running p3dx.launch)
 

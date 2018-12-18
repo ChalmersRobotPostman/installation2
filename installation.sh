@@ -24,8 +24,6 @@ cd src
 
 # ----get dependencies-----
 sudo apt-get update
-# sudo apt-get install -y ros-kinetic-ackermann-msgs
-# sudo apt-get install -y ros-kinetic-joy
 
 #------clone needed repositories-----
 git clone https://github.com/ChalmersRobotPostman/p3dx_launch.git
@@ -37,7 +35,7 @@ cd src
 sudo apt-get install ros-kinetic-image-view
 sudo apt-get install ros-kinetic-rosbridge-server
 sudo apt-get install ros-kinetic-image-geometry
-git clone https://github.com/amor-ros-pkg/rosaria.git
+
 git clone https://github.com/ChalmersRobotPostman/apriltags2_ros.git
 git clone https://github.com/ChalmersRobotPostman/usb_cam.git
 git clone https://github.com/ChalmersRobotPostman/simple_navigation_goals.git
@@ -51,5 +49,4 @@ catkin_make -j4
 echo "source $DIR/catkin_ws/devel/setup.bash" >> ~/.bashrc
 source ~/.bashrc
 
-sudo chmod a+rw /dev/ttyUSB0
-sudo chmod a+rw /dev/ttyACM0
+
