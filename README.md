@@ -8,7 +8,7 @@
 
 * Install and setup RosAria:
 
-download the rosariainstallation file and run it from this aria webarchive:
+download the rosaria installation file from this aria webarchive and install install it with e.g. the ubuntu software center:
 
 		https://web.archive.org/web/20180205212122/http://robots.mobilerobots.com/wiki/Aria
 
@@ -28,9 +28,18 @@ open the config through file -> open then go to catkin_ws/src/p3dx_launch/nav.rv
 Follow the steps under mapping, however we have made changes to the p3dx_launch file to work for our project.
 
 
-* How to run apriltags-detection (this can be done simultaneously with running p3dx_launch
+* How to run apriltags-detection: (this can be done simultaneously with running p3dx.launch)
 
-         rosrun apriltags2_ros ATtags_tt.py
+before running this the first time, you need to make the file executable by cd into catkin_ws/src/apriltags2_ros/apriltags2_ros/launch and then running
+
+         chmod +x ATtags_test.py
+
+then, to run the script:
+ 
+         rosrun apriltags2_ros ATtags_test.py
+
+
+this script is continously searching for certain tag id:s and then publishes a string message to the topic 'QRcode'. You can change the ID:s in the script, but the you need to add it aswell in the tags.yaml file located in catkin_ws/src/apriltags2_ros/apriltags2_ros/config. You can find more info about apriltags2 at: http://wiki.ros.org/apriltags2_ros/Tutorials/Detection%20in%20a%20video%20stream
 
 * How to run the postman interface:
 
