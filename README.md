@@ -1,6 +1,6 @@
 * This project was made on Ubuntu 16.04.01, following is a tutorial how to setup this up. This tutorial is brief, therefore you might have to you use google for certain parts.
 
-* Download this [script](https://github.com/ChalmersRobotPostman/Installation.sh) , which downloads ROS, creates a new catkin workspace and clones down all the repositories you need. If you don't need to do all this, just comment out the lines you don't want to run. 
+* Download this [script](https://github.com/ChalmersRobotPostman/Installation.sh) , which downloads ROS, creates a new catkin workspace and clones down all the repositories you need. If you don't need to do all this, just comment out the lines you don't want to run. It is recommended that you get familiar with ros before everything. Here is a tutorial for ROS: http://wiki.ros.org/en/ROS/Tutorials
 
     * Put the file where you want to create the new workspace and **source** it (just running it won't work)
     * It is important that you have git installed before running this installation file!!!
@@ -17,7 +17,7 @@ First, download rosaria into catkin_ws/src:
 
         git clone https://github.com/amor-ros-pkg/rosaria.git
 
-Install the file libaria_2.9.4+ubuntu16_i386.deb located in this repo through ubuntu software center
+Install the file libaria_2.9.4+ubuntu16_i386.deb located in this repo through ubuntu software center, then run catkin_make in /catkin_ws
 
 * The first time you connect the robot and the lidar to usb-ports, you might have to run
          
@@ -25,12 +25,12 @@ Install the file libaria_2.9.4+ubuntu16_i386.deb located in this repo through ub
 
          sudo chmod a+rw /dev/ttyACM0
 
-to give permission for the user to use these.
+to give permission for the user to use these. Note here that the robot must be turned on before using chmod.
 
 * How to run the robot with rviz: (this launch file will initiate with rotating two times to try to localize itself) 
 
 First, connect the lidar sensor, web-camera and the serial cable to the onboard computer, (you might have to run source devel/setup.bash in each terminal window wyhen using ros)
-then run:
+then run these commands in three different terminals:
 
          roscore
 	
@@ -74,6 +74,6 @@ then startup teamviewer on the tablet and connect.
 
 
 * Configure navigation stack:
-To record your own map, follow this tutorial: https://github.com/fgrzeszc/p3dx_launch
+To record your own map, follow this tutorial: https://github.com/fgrzeszc/p3dx_launchc
 To tune the navigation tack, there are four .yaml files located in catkin_ws/src/p3dx_launch/nav_config where you set certain parameters. Another way is to run rqt_reconfigure to adjust more parameters dynamically.
 
